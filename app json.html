@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>notepad</title>
+</head>
+<style type="text/css">
+ol,ul{
+display:block;
+list-style-type:none;
+margin:3px;
+}
+</style><body>
+<div>Apps json for github<br>
+<br>
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';<br>
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';<br>
+import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';<br>
+import '@solana/wallet-adapter-react-ui/styles.css';<br>
+<br>
+const wallets = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];<br>
+<br>
+export default function App() {<br>
+&nbsp; return (<br>
+&nbsp;&nbsp;&nbsp; &lt;ConnectionProvider endpoint="https://api.mainnet-beta.solana.com"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;WalletProvider wallets={wallets} autoConnect&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;WalletModalProvider&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ConnectAgentButton /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/WalletModalProvider&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/WalletProvider&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/ConnectionProvider&gt;<br>
+&nbsp; );<br>
+}</div>
+</body>
+</html>
